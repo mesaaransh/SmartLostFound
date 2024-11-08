@@ -1,0 +1,22 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+body{
+    background-color: #222222;
+}
+
+button{
+    background-color: #686868;
+    border: 0px solid;
+    padding: 7px 15px;
+
+    border-radius: 5px;
+    font-family: 'Courier Prime';
+    color: white;  
+    
+    cursor: pointer;
+}
