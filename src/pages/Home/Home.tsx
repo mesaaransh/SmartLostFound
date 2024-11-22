@@ -18,7 +18,7 @@ export default function Home() {
 
         <SearchBar/>
         <div className="homeHeads">
-          <h1>Find What You’ve Lost, Faster and Easier!</h1>
+          <h1>Find What You've Lost, Faster and Easier!</h1>
           <p>Search through lost and found items with ease. Whether you remember a few details or have an image of your missing item, our powerful search tools make it simple to locate lost belongings quickly. Just type in keywords or upload an image, and we’ll help you find what you’re looking for.</p>
         </div>
         

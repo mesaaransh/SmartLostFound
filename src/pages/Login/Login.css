@@ -34,6 +34,10 @@
     height: inherit;
     background-color: #A0A0A0;
 
+    background-image: url('https://lms.thapar.edu/moodle/pluginfile.php/1/theme_moove/loginbgimg/1659956381/1_Thapar_Student_Residencies.jpg');
+    background-size: cover;
+    filter: saturate(50%) brightness(80%);
+
 }
 
 .loginInput{

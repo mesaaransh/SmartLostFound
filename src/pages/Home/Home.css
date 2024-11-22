@@ -33,6 +33,11 @@
 
 .homeHeads{
     margin-top: 50px;
-    width: 60vw;
+    width: 70vw;
     text-align: center;
+}
+
+.homeHeads > p{
+    margin-top: 10px;
+    font-weight: 200;
 }

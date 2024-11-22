@@ -11,7 +11,9 @@ export default function Login() {
             <button className="loginButton">Submit</button>
 
         </div>
-        <div className="loginImage"></div>
+        <div className="loginImage">
+          
+        </div>
     </div>
   )
 }
