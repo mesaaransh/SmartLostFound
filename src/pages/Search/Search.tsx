@@ -8,46 +8,45 @@ export default function Search() {
 
   return (
     <>
-    {/* <ProdPop/> */}
+      <ProdPop />
 
-    <div className="search">
+      <div className="search">
 
-      <SearchBar/>
+        <SearchBar />
 
-      <div className="prodContainer">
-        <Prod/>
-        <Prod/>
-        <Prod/>
-        <Prod/>
-        <Prod/>
-        <Prod/>
-        <Prod/>
-        <Prod/>
-        <Prod/>
-        <Prod/>
-        <Prod/>
-        <Prod/>
-        <Prod/>
-        <Prod/>
-        <Prod/>
-        <Prod/>
-        <Prod/>
+        <div className="prodContainer">
+          <Prod />
+          <Prod />
+          <Prod />
+          <Prod />
+          <Prod />
+          <Prod />
+          <Prod />
+          <Prod />
+          <Prod />
+          <Prod />
+          <Prod />
+          <Prod />
+          <Prod />
+          <Prod />
+          <Prod />
+          <Prod />
+        </div>
+
       </div>
-
-    </div>
     </>
   )
 }
 
 
-function Prod(){
+function Prod() {
 
 
-  function clickHandle(){
+  function clickHandle() {
 
   }
 
-  return(
+  return (
     <div className="prod" onClick={clickHandle}>
 
       <div className="prodImage"></div>
@@ -67,32 +66,80 @@ function Prod(){
 }
 
 
-function ProdPop(){
+function ProdPop() {
 
-  return(
+  return (
     <div>
       <div className="popupblur"></div>
 
       <div className="popup">
-        <AppleGroup/>
+        <AppleGroup />
+
         <div className="popupin">
-          <div className="popupimg"></div>
-
-          <div className="popupoptions">
-            <div>
-              <h1>Item Name</h1>
-              <p>Item Place</p>
-            </div>
-
-            <div className="prodpopicons">
-              <button>Claim</button>
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faBookmark} />
-            </div>
-          </div>
+          <Popin2 />
         </div>
-      </div> 
+
+      </div>
     </div>
+  )
+
+}
+
+
+function Popin1() {
+
+  return (
+    <>
+      <div className="popupimg"></div>
+
+      <div className="popupoptions">
+        <div>
+          <h1>Item Name</h1>
+          <p>Item Place</p>
+        </div>
+
+        <div className="prodpopicons">
+          <button>Claim</button>
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faBookmark} />
+        </div>
+      </div>
+    </>
+  )
+
+}
+
+
+function Popin2() {
+
+  return (
+    <>
+
+      <div className="popupoptions">
+        <div>
+          <h1>Item Name</h1>
+          <p>Item Place</p>
+        </div>
+
+        <div className="prodpopicons">
+          <button>Claim</button>
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faBookmark} />
+        </div>
+      </div>
+
+      <div className="popInputs">
+        <input type="text" placeholder="Name" className="loginInput" />
+        <input type="text" placeholder="Email" className="loginInput" />
+        <input type="text" placeholder="Phone No." className="loginInput" />
+      </div>
+
+      <div className="popButtonGroup">
+        <button>Back</button>
+        <button>Submit</button>
+      </div>
+
+    </>
   )
 
 }

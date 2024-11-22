@@ -136,3 +136,46 @@
 .prodpopicons > button{
     font-family: 'Roboto';
 }
+
+.popInputs{
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+    margin-top: 20px;
+
+}
+
+.popInputs > .loginInput{
+
+    height: 40px;
+    background-color: #CACACA;
+    border: 1px solid #939393;
+
+}
+
+.popButtonGroup{
+
+    margin-left: auto;
+
+    font-family: 'Roboto';
+    display: flex;
+    gap: 10px;
+
+    margin-top: 20px;
+
+}
+
+.popButtonGroup > button{
+    font-family: 'Roboto';
+}
+
+.popButtonGroup > button:nth-of-type(2){
+
+    padding: 0px 40px;
+    font-weight: 600;
+    background-color: #40E063;
+    color: #222222;
+
+}
