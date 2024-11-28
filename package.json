@@ -16,6 +16,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@tanstack/react-query": "^5.61.0",
+    "@tanstack/react-query-devtools": "^5.61.5",
     "appwrite": "^16.0.2",
     "hugeicons-react": "^0.3.0",
     "javascript-lemmatizer": "^0.0.2",

@@ -32,6 +32,13 @@ export default function Captioner() {
     };
 
 
+    function getRandomDate(startDate: string, endDate: string) {
+        const start = new Date(startDate).getTime();
+        const end = new Date(endDate).getTime();
+        const randomTime = Math.floor(Math.random() * (end - start + 1)) + start;
+        return new Date(randomTime);
+    }
+
     async function clickHandle() {
 
         const result = await storage.listFiles(
@@ -71,7 +78,9 @@ export default function Captioner() {
                         Tags: tags,
                         Place: places[Math.floor(Math.random() * 12)],
                         ImageURL: url,
-                        ImageID: fileID
+                        ImageID: fileID,
+                        DateAdded: getRandomDate('2024-11-01', '2024-11-31'),
+                        Enable: true
                     }
                 );
     

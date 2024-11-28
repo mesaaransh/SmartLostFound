@@ -1,15 +1,40 @@
 import "./Search.css"
-import SearchBar from "../../components/SearchBar/SearchBar";
 import AppleGroup from "../../components/AppleGroup/AppleGroup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark, faStar } from "@fortawesome/free-regular-svg-icons";
 import { useEffect, useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import Loader from "../../components/Loader/Loader";
+import { search } from "./searchFun";
+import Popin2 from "./ProdPop2";
+import { useNavigate, useSearchParams } from "react-router-dom";
+
 
 export default function Search() {
 
+  let [query, setQuery] = useState('')
   let [pop, setPop] = useState(false);
   let [activePopInfo, setActivePopInfo] = useState({})
-  let [results, setResults] = useState([])
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    let q:any = searchParams.get('q');
+    setQuery(q)
+    searchHandle.mutate(q)   
+  }, [])
+
+  function changeHandle(e: any) {
+    setQuery(e.target.value);
+  }
+
+  const searchHandle = useMutation({
+    mutationFn: (query: string) => {
+      setSearchParams({
+        q: query
+      })
+      return search(query)
+    },
+  })
 
   function popupClickHandle() {
     setPop(!pop)
@@ -21,30 +46,42 @@ export default function Search() {
 
   return (
     <>
-
       {pop ? <ProdPop clickfn={popupClickHandle} info={activePopInfo} /> : <></>}
-
       <div className="search">
-        <SearchBar populator={setResults} />
+        <div className="searchBar">
+          <AppleGroup />
+          <form className="searchin" onSubmit={(e) => {e.preventDefault(); searchHandle.mutate(query)}}>
+            <input className="searchInput" type="text" value={query} onChange={changeHandle} placeholder={"> Search for your lost item"} />
+            <div className="group">
+              <button>Upload Image</button>
+              <button type="submit" onClick={() => { searchHandle.mutate(query) }}>Search</button>
+            </div>
+          </form>
+        </div>
+
         <div className="prodContainer">
           {
-            results.map((item: any) => (
-              <>
-                <Prod info={item} clickfn={popupClickHandle} infofn={setActivePopInfo} />
-              </>
-            ))
+            !searchHandle.isSuccess ?
+              <Loader />
+              :
+              searchHandle.data.documents.length?
+              searchHandle.data.documents.map((item: any) => (
+                <>
+                  <Prod info={item} clickfn={popupClickHandle} infofn={setActivePopInfo} />
+                </>
+              )):
+              <p className="nores">No Results</p>
           }
         </div>
       </div>
-
     </>
+
   )
 }
 
-
 function Prod(props: any) {
 
-  function clickHandle(){
+  function clickHandle() {
     props.clickfn()
     props.infofn(props.info)
   }
@@ -62,14 +99,11 @@ function Prod(props: any) {
       </div>
     </div>
   )
-
 }
-
 
 function ProdPop(props: any) {
 
   let [claim, setClaim] = useState(true);
-
   return (
     <div>
       <div className="popupblur" onClick={props.clickfn}></div>
@@ -84,9 +118,7 @@ function ProdPop(props: any) {
       </div>
     </div>
   )
-
 }
-
 
 function Popin1(props: any) {
 
@@ -109,65 +141,6 @@ function Popin1(props: any) {
           <FontAwesomeIcon icon={faStar} />
           <FontAwesomeIcon icon={faBookmark} />
         </div>
-      </div>
-
-    </>
-  )
-
-}
-
-
-function Popin2(props: any) {
-
-  let [info, setInfo] = useState({
-    name: '',
-    email: '',
-    phone: ''
-  })
-
-  function changeHandle(e: any){
-
-    setInfo({
-      ...info,
-      [e.target.name]: e.target.value
-    })
-
-  }
-
-  function submitHandle(){
-
-    
-
-  }
-
-  function clickHandle() {
-    props.claimsetter(true)
-  }
-
-  return (
-    <>
-
-      <div className="popupoptions">
-        <div>
-          <h1>{props.info.Description}</h1>
-          <p>{props.info.Place}</p>
-        </div>
-
-        <div className="prodpopicons">
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faBookmark} />
-        </div>
-      </div>
-
-      <div className="popInputs">
-        <input type="text" onChange={changeHandle} placeholder="Name" className="loginInput" />
-        <input type="text" onChange={changeHandle} placeholder="Email" className="loginInput" />
-        <input type="text" onChange={changeHandle} placeholder="Phone No." className="loginInput" />
-      </div>
-
-      <div className="popButtonGroup">
-        <button onClick={clickHandle}>Back</button>
-        <button>Submit</button>
       </div>
 
     </>
