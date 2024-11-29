@@ -11,6 +11,7 @@ import Login from "./pages/Login/Login"
 import AdminHome from "./admin/Home/Home"
 import AdminLayout from "./admin/Layout"
 import AdminReport from "./admin/Report/Report"
+import AdminLostItems from "./admin/LostItems/LostItems"
 
 function App() {  
 
@@ -34,6 +35,7 @@ function App() {
           <Route element = {<AdminLayout/>}>
             <Route path="home" element={<AdminHome/>}/>
             <Route path="report" element={<AdminReport/>}/>
+            <Route path="lostItems" element={<AdminLostItems/>}/>
           </Route>
         </Route>
       </Routes>

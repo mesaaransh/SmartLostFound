@@ -8,7 +8,9 @@ export default function AdminLayout() {
     <div className="layout">
         <div className="content">
             <Topbar/>
-            <Outlet/>
+            <div className="outlet">
+                <Outlet/>
+            </div>
         </div>
         <Sidebar/>
     </div>

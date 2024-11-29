@@ -1,5 +1,9 @@
+import { useNavigate } from "react-router-dom"
 import "./Sidebar.css"
 export default function Sidebar() {
+
+    const navigate = useNavigate();
+
   return (
     <div className="sidebar">
 
@@ -10,7 +14,13 @@ export default function Sidebar() {
         
         <h3>Menus</h3>
         <div className="section">
-            <div className="menu">
+
+            <div className="menu" onClick={() => {navigate('/admin/home')}}>
+                <div className="menuicon"></div>
+                <p>Home</p>
+            </div>
+
+            <div className="menu" onClick={() => {navigate('/admin/lostitems')}}>
                 <div className="menuicon"></div>
                 <p>Lost Items</p>
             </div>
