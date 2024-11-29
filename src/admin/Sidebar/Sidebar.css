@@ -1,0 +1,78 @@
+.sidebar{
+
+    width: 22vw;
+    height: 100vh;
+    background-color: #111111;
+    color: white;
+
+    padding: 20px 20px;
+
+}
+
+
+.sidebar > h3{
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+    width: 100%;
+}
+
+.menuicon{
+
+    height: 40px;
+    aspect-ratio: 1;
+    background-color: rgb(0, 132, 247);
+
+    margin-right: 10px;
+    border-radius: 5px;
+
+}
+
+.menu{
+
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+    background-color: #111111;
+
+    border-radius: 7px;
+    cursor: pointer;
+    transition-duration: 200ms;
+
+}
+
+.menu:hover{
+
+    background-color: #333333;
+
+}
+
+.report{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding: 15px 10px;
+
+    border-radius: 5px;
+
+    background-color: rgb(241, 0, 52);
+    cursor: pointer;
+
+    transition-duration: 200ms;
+
+}
+
+.report:hover{
+
+    filter: brightness(90%);
+
+}

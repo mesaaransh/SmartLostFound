@@ -42,7 +42,7 @@ export default function Captioner() {
     async function clickHandle() {
 
         const result = await storage.listFiles(
-            '673f5fc50019b8ffb728',
+            '67492c440016c7cc5bd0',
             []
         );
 
@@ -51,7 +51,7 @@ export default function Captioner() {
             try{
                 
                 let fileID = result.files[i].$id
-                let url: string = 'https://cloud.appwrite.io/v1/storage/buckets/673f5fc50019b8ffb728/files/' + fileID + '/view?project=673f5e400033c82ce943&mode=admin';
+                let url: string = 'https://cloud.appwrite.io/v1/storage/buckets/67492c440016c7cc5bd0/files/' + fileID + '/view?project=673f5e400033c82ce943&project=673f5e400033c82ce943&mode=admin';
                 const fileResponse = await fetch(url);
                 const fileContent = await fileResponse.blob();
     
@@ -84,10 +84,11 @@ export default function Captioner() {
                     }
                 );
     
-                console.log(caption);
+                console.log(i, "Done");
 
             }catch(err){
                 console.log(err);
+                i--;
             }
 
         }

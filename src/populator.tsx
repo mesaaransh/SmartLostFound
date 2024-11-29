@@ -8,22 +8,34 @@ export default function Populator() {
 
     const storage = new Storage(client);
 
+    function wait(ms: number) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
 
     async function changeHadnler(e: any){
 
         console.log(e.target.files.length);
-
         var len = e.target.files.length
         for(var i = 0; i < len; i++){
 
-            const result = await storage.createFile(
-                '673f5fc50019b8ffb728',
-                ID.unique(),
-                e.target.files[i]
-            );
+            await wait(500);
+
+            try{
+                await storage.createFile(
+                    '67492c440016c7cc5bd0',
+                    ID.unique(),
+                    e.target.files[i]
+                ).then(() => {
+                    console.log(i, "Done");
+                }).catch((err) => {
+                    console.log(err);
+                    i--
+                })
+            }catch(err){
+                console.log(err);
+            }
 
         }
-        
     }
 
 

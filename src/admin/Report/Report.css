@@ -1,0 +1,96 @@
+form.adminFrom {
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+form.adminFrom label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: white;
+}
+
+form.adminFrom input {
+  background-color: rgb(36, 36, 36);
+  color: white;
+}
+
+form.adminFrom input[type="text"],
+form.adminFrom input[type="date"],
+form.adminFrom .file-dropzone {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #616161;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: 0.3s ease-in-out;
+}
+
+form.adminFrom input[type="text"]:focus,
+form.adminFrom input[type="date"]:focus,
+form.adminFrom .file-dropzone.drag-over {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Slider styling */
+form.adminFrom .slider-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+form.adminFrom .slider-container input[type="checkbox"] {
+  display: none;
+}
+
+form.adminFrom .slider {
+  width: 50px;
+  height: 24px;
+  background: #ccc;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form.adminFrom .slider::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: 0.3s ease-in-out;
+}
+
+form.adminFrom input[type="checkbox"]:checked + .slider {
+  background: #007bff;
+}
+
+/* Drag-and-drop file input */
+form.adminFrom .file-dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100px;
+  border: 2px dashed #ccc;
+  border-radius: 7px;
+  background-color: #181818;
+  color: #aaa;
+  transition: background-color 0.3s ease-in-out;
+
+  cursor: pointer;
+}
+
+form.adminFrom .file-dropzone.drag-over {
+  background-color: #e9f5ff;
+  border-color: #007bff;
+  color: #007bff;
+}
