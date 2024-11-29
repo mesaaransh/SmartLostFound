@@ -20,12 +20,12 @@ export default function Sidebar() {
                 <p>Home</p>
             </div>
 
-            <div className="menu" onClick={() => {navigate('/admin/lostitems')}}>
+            <div className="menu" onClick={() => {navigate('/admin/items')}}>
                 <div className="menuicon"></div>
                 <p>Lost Items</p>
             </div>
 
-            <div className="menu">
+            <div className="menu" onClick={() => {navigate('/admin/claims')}}>
                 <div className="menuicon"></div>
                 <p>Claims</p>
             </div>

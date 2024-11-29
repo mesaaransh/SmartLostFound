@@ -12,6 +12,7 @@ import AdminHome from "./admin/Home/Home"
 import AdminLayout from "./admin/Layout"
 import AdminReport from "./admin/Report/Report"
 import AdminLostItems from "./admin/LostItems/LostItems"
+import AdminClaims from "./admin/Claims/Claims"
 
 function App() {  
 
@@ -35,7 +36,8 @@ function App() {
           <Route element = {<AdminLayout/>}>
             <Route path="home" element={<AdminHome/>}/>
             <Route path="report" element={<AdminReport/>}/>
-            <Route path="lostItems" element={<AdminLostItems/>}/>
+            <Route path="items" element={<AdminLostItems/>}/>
+            <Route path="claims" element={<AdminClaims/>}/>
           </Route>
         </Route>
       </Routes>
