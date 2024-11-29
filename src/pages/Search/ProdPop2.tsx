@@ -24,6 +24,8 @@ export default function Popin2(props: any) {
             return submitHandle(id, info)
         },
         onSuccess: () => {
+            alert("Claimed Successfully")
+            alert("Go to admin office to collect")
             props.claimsetter(true)
         },
         onError: (err) => {

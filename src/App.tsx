@@ -13,6 +13,7 @@ import AdminLayout from "./admin/Layout"
 import AdminReport from "./admin/Report/Report"
 import AdminLostItems from "./admin/LostItems/LostItems"
 import AdminClaims from "./admin/Claims/Claims"
+import AdminSummary from "./admin/Summary/Summary"
 
 function App() {  
 
@@ -38,6 +39,7 @@ function App() {
             <Route path="report" element={<AdminReport/>}/>
             <Route path="items" element={<AdminLostItems/>}/>
             <Route path="claims" element={<AdminClaims/>}/>
+            <Route path="summary" element={<AdminSummary/>}/>
           </Route>
         </Route>
       </Routes>

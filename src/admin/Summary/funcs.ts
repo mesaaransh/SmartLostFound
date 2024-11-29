@@ -6,15 +6,15 @@ const client = new Client()
 
 const databases = new Databases(client);
 
-
-function lostItemFetcher(){
+export function lostItemFetcherweek(){
 
     return databases.listDocuments(
         '673f5e8f002dd3d80882',
         '673f5e9e0010d2dbaf2d',
-        [Query.orderDesc("DateAdded")]
+        [
+            Query.greaterThan("DateAdded", ['2024-11-22T00:00:00Z']),
+            Query.orderDesc("DateAdded")
+        ]
     );
 
 }
-
-export {lostItemFetcher}
