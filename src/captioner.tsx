@@ -1,4 +1,4 @@
-import { Client, Databases, ID, Storage } from "appwrite";
+import { Client, Databases, ID, Query, Storage } from "appwrite";
 import { removeStopwords } from "stopword";
 import { stemmer } from 'stemmer'
 
@@ -43,8 +43,10 @@ export default function Captioner() {
 
         const result = await storage.listFiles(
             '67492c440016c7cc5bd0',
-            []
+            [Query.limit(120)]
         );
+
+        console.log(result);
 
         for (var i = 0; i < result.files.length; i++) {
 

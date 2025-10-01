@@ -28,12 +28,14 @@ export default function Search() {
   }
 
   const searchHandle = useMutation({
+
     mutationFn: (query: string) => {
       setSearchParams({
         q: query
       })
       return search(query)
     },
+
   })
 
   function popupClickHandle() {
@@ -53,7 +55,7 @@ export default function Search() {
           <form className="searchin" onSubmit={(e) => {e.preventDefault(); searchHandle.mutate(query)}}>
             <input className="searchInput" type="text" value={query} onChange={changeHandle} placeholder={"> Search for your lost item"} />
             <div className="group">
-              <button>Upload Image</button>
+              {/* <button>Upload Image</button> */}
               <button type="submit" onClick={() => { searchHandle.mutate(query) }}>Search</button>
             </div>
           </form>

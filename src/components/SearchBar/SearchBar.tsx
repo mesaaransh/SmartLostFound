@@ -26,7 +26,7 @@ export default function SearchBar() {
         <input className="searchInput" type="text" onChange={(e) => {setQuery(e.target.value)}} placeholder={"> Search for your lost item"} />
 
         <div className="group">
-          <button>Upload Image</button>
+          {/* <button>Upload Image</button> */}
           <button type="submit">Search</button>
         </div>
       </form>
